@@ -11,10 +11,11 @@ api_key = st.text_input("Google Gemini API Key ထည့်ပါ", type="passwo
 if api_key:
     try:
         genai.configure(api_key=api_key)
+        # Model နာမည်ကို ပိုမိုသင့်လျော်သော ဗားရှင်းသို့ ပြောင်းထားပါသည်
         model = genai.GenerativeModel('gemini-1.5-flash')
 
         # Subtitle သို့မဟုတ် ဇာတ်လမ်းအကျဉ်း ထည့်ရန်
-        source_text = st.text_area("ရုပ်ရှင် Subtitle (သို့) အင်္ဂလိပ်လို ဇာတ်လမ်းအကျဉ်းကို ထည့်ပါ")
+        source_text = st.text_area("ရုပ်ရှင် Subtitle (သို့) အင်္ဂလိပ်/တရုတ် ဇာတ်လမ်းအကျဉ်းကို ထည့်ပါ")
 
         if st.button("မြန်မာလို Recap Script ဖန်တီးမည်"):
             if source_text:
